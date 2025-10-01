@@ -1,0 +1,43 @@
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Use the following format to give the command 
+--------------------------------------------------------------------------
+First word 
+1. create / add /  c / a => create a new task 
+    - 1.1 Second word
+        Task name (must be within " " if more than one word)
+    - 1.2 Third word 
+        start time : **MUST BE IN HH:MM format ONLY" (24H)
+    - 1.3 Fourth word 
+        end time : same rules 
+    - 1.4 Fifth word
+        priority : if not given - assume medium (and inform it to user)
+            high/h
+            medium/m 
+            low/l 
+--------------------------------------------------------------------------
+2. remove / delete / r / d => deletes a task
+    - 2.1 next words
+        Task name 
+--------------------------------------------------------------------------
+3. edit / update / e / u => edit an existing task 
+    - 3.1 second word 
+        task name (must be within " " if more than one word)
+    - 3.2 third word 
+        n (name) / st (for start time) / et (end time) / p (priority)
+    - 3.4 fourth word 
+        new string to be updated 
+--------------------------------------------------------------------------
+4. view / list / v / l 
+     => view the list of all tasks, as a table sorted by time
+     If you want to filter by priority just type the priority near it 
+    4.1 second word
+        represents priority (h/l/m)
+--------------------------------------------------------------------------
+5. exit / quit to close the application
+--------------------------------------------------------------------------
+6. help / h to see this menu 
+--------------------------------------------------------------------------
+All of these are NOT case sensitive
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------

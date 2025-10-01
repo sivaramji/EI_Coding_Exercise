@@ -15,7 +15,8 @@ This file has the overall explanation of the submissions. Detailed explanations 
 
 ### 3. Behavioural 
 1. Visitor - one template to allow any type of changes to ALL milkshakes. 
-2.Template - boiler plate to make ANY milkshake. (flyweight included - no redundant implementation) - only flavour and toppings are added in subclasses. 
+
+2. Template - boiler plate to make ANY milkshake. (flyweight included - no redundant implementation) - only flavour and toppings are added in subclasses. 
 
 # Exercise 2 
 
