@@ -13,7 +13,7 @@ i.e. new mangoMilkShake(), new vannilaMilkShake() is redudant if they are two se
 We have a spaceMilkShakeFactory which can provide the astronaut with any milkShake they want as most of the implementation remains the same. 
 In this factory, we decide what milkshake to make, and NOT at the main. the task is delegated to a 'factory' which can make similar products. 
 
-If we want to combine similar steps of each milkshake, we can implement the spaceMilkShake interface to a class where we do the common steps and inherit (extend) the specific milk shake types from this class. - not under the scope of factory method. 
+If we want to combine similar steps of each milkshake, we can implement the spaceMilkShake interface to a class where we do the common steps and inherit (extend) the specific milk shake types from this class. - not under the scope of factory method. (Reference to Structural Pattern - Flyweight) 
 
 #### 2. Abstract 
 This is very similar to factory - but we order the factories as a whole here. 

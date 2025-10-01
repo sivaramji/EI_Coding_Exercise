@@ -23,6 +23,6 @@ This file has the overall explanation of the submissions. Detailed explanations 
 
 ### Language Used : Java 
 
-#### Focus: 
+Focus: 
 
 ### Design Patterns used: 
