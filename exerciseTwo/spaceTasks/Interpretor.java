@@ -1,4 +1,4 @@
-package exerciseTwo;
+package exerciseTwo.spaceTasks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +25,31 @@ public class Interpretor {
         // Placeholder for actual task existence check
         // In a real implementation, this would check against a list or database of
         // tasks
+
         return true; // Assume the task exists for this example
+    }
+    
+    private boolean validateTime (String startTime, String endTime) {
+        try{
+            int startHour = Integer.parseInt(startTime.split(":")[0]);
+            int startMinute = Integer.parseInt(startTime.split(":")[1]);
+            int endHour = Integer.parseInt(endTime.split(":")[0]);
+            int endMinute = Integer.parseInt(endTime.split(":")[1]);
+            if (startHour < 0 || startHour > 23 || startMinute < 0 || startMinute > 59 ||
+                endHour < 0 || endHour > 23 || endMinute < 0 || endMinute > 59) {  
+                return false;
+            }
+            if (startHour > endHour || (startHour == endHour && startMinute >= endMinute)) {
+                System.out.println("Start time must be earlier than end time.");
+                return false;
+            }
+
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
+       
     }
 
     private boolean containsIgnoreCase(ArrayList<String> list, String str) {
@@ -69,7 +93,7 @@ public class Interpretor {
                         System.out.println("Error: Invalid command format. Missing closing quote for taskName.");
                         return null;
                     }
-                    taskName = parts[1].substring(0, closingQuoteIndex + 1).trim();
+                    taskName = parts[1].substring(1, closingQuoteIndex ).trim();
 
                     String remaining = parts[1].substring(closingQuoteIndex + 1).trim();
                     String[] remainingParts = remaining.split(" ");
@@ -80,6 +104,11 @@ public class Interpretor {
                     }
                     startTime = remainingParts[0].trim();
                     endTime = remainingParts[1].trim();
+                    if(!validateTime(startTime, endTime)) {
+                        System.out.println("Error: Invalid time format. Please provide time in HH:MM format with a value greater than or equal to 00:00 and lesser than or equal to 23:59.");
+                        return null;
+                    }
+                                        
                     if (remainingParts.length < 3) {
                         priority = "medium"; // default priority
                     } else {
@@ -95,6 +124,11 @@ public class Interpretor {
                     taskName = subParts[0].trim();
                     startTime = subParts[1].trim();
                     endTime = subParts[2].trim();
+                    if(!validateTime(startTime, endTime)) {
+                        System.out.println("Error: Invalid time format. Please provide time in HH:MM format with a value greater than or equal to 00:00 and lesser than or equal to 23:59.");
+                        return null;
+                    }
+                       
                     if (subParts.length < 4) {
                         priority = "medium"; // default priority
                     } else {
@@ -130,7 +164,7 @@ public class Interpretor {
                         System.out.println("Error: Invalid command format. Missing closing quote for taskName.");
                         return null;
                     }
-                    taskName = parts[1].substring(0, closingQuoteIndex + 1).trim();
+                    taskName = parts[1].substring(1, closingQuoteIndex ).trim();
                     remainingPart = parts[1].substring(closingQuoteIndex + 1).trim();
                 } else {
                     String[] subParts = parts[1].trim().split(" ");
@@ -172,7 +206,34 @@ public class Interpretor {
         } else if (action.equalsIgnoreCase("help") || action.equalsIgnoreCase("h")) {
             action = "help";
             return new String[] { action };
-        } else {
+        }
+        else if (action.equalsIgnoreCase("done")) {
+            try {
+                action = "done";
+                taskName = parts[1].trim(); // whatever is there after the space
+                return new String[] { action, taskName };
+            } catch (Exception e) {
+                System.out.println(
+                        "Error: Invalid command format. Please provide taskName followed after the action with a space");
+                return null;
+            }
+        }
+        else if (action.equalsIgnoreCase("undo")) {
+            try {
+                action = "undo";
+                taskName = parts[1].trim();
+                return new String[] { action, taskName };
+            } catch (Exception e) {
+                System.out.println(
+                        "Error: Invalid command format. Please provide taskName followed after the action with a space");
+                return null;
+            }
+        }
+        else if (action.equalsIgnoreCase("ld")) {
+            action = "ld";
+            return new String[] { action };
+        }
+        else {
             System.out.println("Error: Unknown action. Please use create(c), remove(r), update(u), or view(v)");
             return null;
         }
