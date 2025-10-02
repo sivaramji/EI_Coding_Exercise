@@ -31,7 +31,7 @@ public class Main {
                     System.out.println("Exiting program.");
                 }
                 else if(action.equals("help")){
-                    try (java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("exerciseTwo/helpText.txt"))) {
+                    try (java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("exerciseTwo/spaceTasks/helpText.txt"))) {
                         String line;
                         while ((line = reader.readLine()) != null) {
                             System.out.println(line);

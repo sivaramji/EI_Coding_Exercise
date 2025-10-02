@@ -1,4 +1,4 @@
-package Behavioural.spaceMilkShakes; 
+package Behavioural.Visitor.spaceMilkShakes;
 
 public class chocolateMilkShake implements spaceMilkShake {
     

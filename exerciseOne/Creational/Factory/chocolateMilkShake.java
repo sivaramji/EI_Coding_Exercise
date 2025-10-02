@@ -1,4 +1,4 @@
-package Behavioural; 
+package Factory; 
 
 public class chocolateMilkShake implements spaceMilkShake {
     public void shake() {

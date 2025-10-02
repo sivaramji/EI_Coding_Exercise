@@ -11,6 +11,9 @@ So, we when we call discountVisitor.. essentially, we go and visit EACH of the m
 Similarly, in calorieVisitor, we go to each milkShake and fetch the calories. We can do complex operations also here. 
 It is useful when you have to frequently modify these objects, as a whole. 
 
+Visitor output - fetching / applying updates to all milkshakes externally:
+![visitor](image.png)
+
 ### 2. Template 
 
 First we will create an abstract class called milkShakeMakingTemplate. 
@@ -25,5 +28,7 @@ For example, mango milkshake is called, and the abstract class (template) itself
 
 But the subclasses mangoMilkShake and chocolateMilkShake has the adding the flavour and toppings functions!! 
 
-This is how we use a template pattern. :))!!
+Template - Output : irrepective of flavour and toppings, steps are the same. 
+![template](image-1.png)
 
+This is how we use template pattern! :))

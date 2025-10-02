@@ -164,20 +164,22 @@ public class Interpretor {
                         System.out.println("Error: Invalid command format. Missing closing quote for taskName.");
                         return null;
                     }
-                    taskName = parts[1].substring(1, closingQuoteIndex ).trim();
+                    taskName = parts[1].substring(1, closingQuoteIndex).trim();
                     remainingPart = parts[1].substring(closingQuoteIndex + 1).trim();
                 } else {
-                    String[] subParts = parts[1].trim().split(" ");
+                    String[] subParts = parts[1].trim().split(" ", 2);
                     taskName = subParts[0].trim();
                     remainingPart = subParts[1].trim();
                 }
+                
                 remainingPart = remainingPart.trim();
                 if (taskExists(taskName)) {
                     // remaining parts -> two
                     String[] remainingParts = remainingPart.split(" ");
+    
                     if (remainingParts.length != 2) {
                         System.out.println(
-                                "Error: Invalid command format. Please provide startTime, endTime, and priority after the taskName");
+                                "Error: Invalid command format. Please provide taskName, action, new value");
                         return null;
                     }
                     // perform the update operation
@@ -207,9 +209,9 @@ public class Interpretor {
             action = "help";
             return new String[] { action };
         }
-        else if (action.equalsIgnoreCase("done")) {
+        else if (action.equalsIgnoreCase("done") || action.equalsIgnoreCase("archive")) {
             try {
-                action = "done";
+                action = "archive";
                 taskName = parts[1].trim(); // whatever is there after the space
                 return new String[] { action, taskName };
             } catch (Exception e) {

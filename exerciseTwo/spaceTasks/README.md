@@ -2,7 +2,6 @@
 
 Details: 
 
-
 noww, first we will start with listing out the requirements as per our understanding. 
 
 Requirements (what we plan to do): 
@@ -15,30 +14,35 @@ Requirements (what we plan to do):
 
 
 ### We will ensure to code our application based on following:- 
-Need to comply : 
+Need to comply : (followed)
 - SOLID design principles
-- design patterns 
+    - Single responsibility - one class, one responsibility
+    - Open / closed -> can extend without changing current code
+    - Liskov Substitution - substitute subclass for parent (can generate only using task class, no need to call the factory interface)
+    - Interface segregation - different actions - different interfaces 
+    - dependency inversion - abstracts should be common. (you can depend only on abstracts not implementations)
+- design patterns (follwed, mentioned below)
 - oops 
 Good to have: 
-- long term running & user ip 
-- logging 
-- exception 
+- long term running & user ip (done)
+- logging (done)
+- exception (done)
 
-
+    
 ### Design patterns 
 1. Interpretor - we will have to use interpretor design pattern here - to get the input from the user. 
 2. singleton - one time manager -> to ensure no overlap 
 3. factory 
 4. observer - notifications for conflicts (checks for conflict when new task is being added) 
 
-Steps followed 
+# Steps followed 
 ### 1. Make a task factory first & create the task template
 ### 2. Implement the interpretor as follows
 
 To make it easy for the user - 
 we will have the interpretor interpret user inputs as follows 
 viz - 
-
+ implementation
 First word 
 1. create / add /  c / a => create a new task 
     - 1.1 Second word
@@ -115,3 +119,6 @@ IF ANY OF THE INPUT IS INVALID. dont proceed after interpretor - simply inform t
 ### 7. sorting based on time
     in the display all and display with filter, we have to sort based on starting time alone 
     this function is updated in the taskRepo. 
+
+Next steps to rectify: Updating start time and end time of tasks without conflict. Need to remove the task and then fit in the new task to check if time conflicts or not. 
+

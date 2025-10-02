@@ -1,6 +1,6 @@
 package Behavioural.Visitor;
 
-import Behavioural.spaceMilkShakes.spaceMilkShake;
+import Behavioural.Visitor.spaceMilkShakes.spaceMilkShake;
 
 public class discountVisitor implements milkShakeVisitor {
     public void visit(spaceMilkShake shake) {

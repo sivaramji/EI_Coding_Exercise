@@ -15,6 +15,10 @@ In this factory, we decide what milkshake to make, and NOT at the main. the task
 
 If we want to combine similar steps of each milkshake, we can implement the spaceMilkShake interface to a class where we do the common steps and inherit (extend) the specific milk shake types from this class. - not under the scope of factory method. (Reference to Structural Pattern - Flyweight) 
 
+Factory output - creating different milkshakes from same factory:
+
+![alt text](image.png)
+
 #### 2. Abstract 
 This is very similar to factory - but we order the factories as a whole here. 
 For example, if I have saved morning breakfast as 
@@ -28,6 +32,12 @@ Here breakfast and lunch are classes. We can update these classes later, so that
 There is a spaceFood package inside Abstract, which is also implemented based on factory pattern. 
 
 When we call serveMeals function - we take in the time input - breakFast or Meals, and then we serve their stored preferences from before. 
+
+Abstract output - creating different factories (meals):
+
+![abstract](image-1.png)
+
+
 
 ___
 

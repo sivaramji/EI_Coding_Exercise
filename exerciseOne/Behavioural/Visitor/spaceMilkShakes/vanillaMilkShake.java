@@ -1,4 +1,4 @@
-package Behavioural.spaceMilkShakes;
+package Behavioural.Visitor.spaceMilkShakes;
 
 public class vanillaMilkShake implements spaceMilkShake {
     private int calories = 200;

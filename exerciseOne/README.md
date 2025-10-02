@@ -54,4 +54,8 @@ There are 7 types - how objects combine.
 -- we will make a visitor and template now for the spaceMilkShake! 
 
 -------
+Screenshots are in respective README files. 
+
+-------
+
 Now we will see how we can use these patterns and create the todo app for our astronaut!! 

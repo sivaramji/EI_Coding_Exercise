@@ -8,6 +8,9 @@ milkShakeBase is an implmentation of spaceMilkShake which is an interface **(Bri
 
 So, when we call mango milkshake, we "reuse" the createBase to add milk and icecream as it's common to all space milkshakes! wow. 
 
+Flyweight Output - common steps combined: 
+
+![flyweight](image.png)
 
 ### 2. Decorators 
 
@@ -25,3 +28,7 @@ Essentially - IRRESPECTIVE of the milk shake base (it can be mango, chocolate, e
 Why it's runtime? - user can separately ask me to add choco chips, even when I'm processing the base milk shake. 
 
 Note: This example of decorators is an example of Command Pattern (Behavioural) too. (Referred in common Readme of exercise 1)
+
+Decorator - output - adding toppings to ANY shake:
+
+![decorator](image-1.png)

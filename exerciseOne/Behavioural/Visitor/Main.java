@@ -1,6 +1,6 @@
 package Behavioural.Visitor;
 
-import Behavioural.spaceMilkShakes.*;
+import Behavioural.Visitor.spaceMilkShakes.*;
 
 public class Main {
     public static void main(String[] args) {

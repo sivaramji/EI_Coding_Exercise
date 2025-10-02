@@ -1,4 +1,4 @@
-package Behavioural.spaceMilkShakes; 
+package Behavioural.Visitor.spaceMilkShakes; 
 
 public interface spaceMilkShakeFactory {
     public static spaceMilkShake createSpaceMilkShake(String type) {
